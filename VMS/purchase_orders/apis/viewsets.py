@@ -1,5 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
+from django_filters.rest_framework import DjangoFilterBackend
 from purchase_orders.apis.serializers import PurchaseOrderSerializer
 from purchase_orders.apis.serializers import PurchaseOrderRetriveSerializer
 
@@ -10,6 +11,9 @@ class PurchaseOrdeerViewSet(ModelViewSet):
     serializer_class = PurchaseOrderSerializer
     queryset = PurchaseOrdeers.objects.all()
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['vender']
+
 
     def get_serializer_class(self):
 
