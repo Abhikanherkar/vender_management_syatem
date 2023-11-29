@@ -90,6 +90,8 @@ coverage.xml
 # pyenv 
 .python-version 
 
+db.sqlite3
+
 # celery 
 celerybeat-schedule.* 
 
